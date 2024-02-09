@@ -10,12 +10,13 @@ Notes: on mac/unix systems run `chmod +x words.py` to mark as executable
 """
 
 import sys
+from typing import List
 from urllib.request import urlopen
 
 default_url = "http://sixty-north.com/c/t.txt"
 
 
-def fetch_words(url):
+def fetch_words(url: str) -> List[str]:
     """Fetch a list of words from a url
 
     Args:
@@ -36,7 +37,7 @@ def fetch_words(url):
     return story_words
 
 
-def print_items(items):
+def print_items(items) -> None:
     """Given a list of items, it prints each item per line
 
     Args:
@@ -48,7 +49,7 @@ def print_items(items):
         print(item)
 
 
-def main(url):
+def main(url: str) -> None:
     if url is None:
         url = default_url
     words = fetch_words(url)
@@ -63,5 +64,6 @@ if __name__ == "__main__":
     Modules: convenient import with API
     Script: convenient execution from commandline
     Program: perhaps composed of many modules
+    this is pointless but it's just my notes
     """
     main(sys.argv[1])
