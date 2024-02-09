@@ -14,14 +14,15 @@ from urllib.request import urlopen
 
 default_url = "http://sixty-north.com/c/t.txt"
 
+
 def fetch_words(url):
     """Fetch a list of words from a url
 
-        Args: 
-            url: The URL of a UTF-8 document.
+    Args:
+        url: The URL of a UTF-8 document.
 
-        Returns:
-            A list of strings containing the words from the document.
+    Returns:
+        A list of strings containing the words from the document.
 
     """
     story = urlopen(url)
@@ -37,14 +38,15 @@ def fetch_words(url):
 
 def print_items(items):
     """Given a list of items, it prints each item per line
-        
-        Args:
-            items: a list of items
+
+    Args:
+        items: a list of items
 
 
     """
     for item in items:
         print(item)
+
 
 def main(url):
     if url is None:
@@ -63,4 +65,3 @@ if __name__ == "__main__":
     Program: perhaps composed of many modules
     """
     main(sys.argv[1])
-
